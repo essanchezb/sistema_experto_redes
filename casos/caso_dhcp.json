@@ -1,0 +1,8 @@
+
+{
+  "nombre": "Caso de problema DHCP",
+  "hechos_iniciales": [
+    "no_obtiene_ip",
+    "router_encendido"
+  ]
+}

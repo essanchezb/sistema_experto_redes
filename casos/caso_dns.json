@@ -1,0 +1,8 @@
+
+{
+  "nombre": "Caso de problema DNS",
+  "hechos_iniciales": [
+    "ping_ip_funciona",
+    "no_resuelve_dominio"
+  ]
+}

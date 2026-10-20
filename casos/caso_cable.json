@@ -1,0 +1,7 @@
+
+{
+  "nombre": "Caso de cable desconectado",
+  "hechos_iniciales": [
+    "cable_desconectado"
+  ]
+}

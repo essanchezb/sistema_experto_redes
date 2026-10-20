@@ -1,0 +1,133 @@
+
+{
+  "nombre": "Sistema experto para diagnostico de redes",
+  "descripcion": "Reglas para identificar fallos comunes de conectividad y recomendar soluciones.",
+  "reglas": [
+    {
+      "id": "R01",
+      "nombre": "Detectar cable desconectado",
+      "antecedentes": ["cable_desconectado"],  
+      "consecuentes": ["fallo_fisico"],        
+      "prioridad": 10                          
+    },
+    {
+      "id": "R02",
+      "nombre": "Confirmar fallo de cableado",
+      "antecedentes": ["fallo_fisico"],
+      "consecuentes": ["diagnostico_cableado"],
+      "prioridad": 8
+    },
+    {
+      "id": "R03",
+      "nombre": "Recomendar revisar el cable",
+      "antecedentes": ["diagnostico_cableado"],
+      "consecuentes": ["recomendar_revisar_cable"],
+      "prioridad": 6
+    },
+    {
+      "id": "R04",
+      "nombre": "Detectar perdida de senal WiFi",
+      "antecedentes": ["wifi_sin_senal"],
+      "consecuentes": ["fallo_wifi"],
+      "prioridad": 9
+    },
+    {
+      "id": "R05",
+      "nombre": "Identificar problema de WiFi",
+      "antecedentes": ["fallo_wifi", "router_encendido"],
+      "consecuentes": ["problema_wifi_local"],
+      "prioridad": 8
+    },
+    {
+      "id": "R06",
+      "nombre": "Recomendar revisar el WiFi",
+      "antecedentes": ["problema_wifi_local"],
+      "consecuentes": ["recomendar_revisar_wifi"],
+      "prioridad": 6
+    },
+    {
+      "id": "R07",
+      "nombre": "Detectar posible fallo DHCP",
+      "antecedentes": ["no_obtiene_ip"],
+      "consecuentes": ["posible_fallo_dhcp"],
+      "prioridad": 9
+    },
+    {
+      "id": "R08",
+      "nombre": "Confirmar problema DHCP",
+      "antecedentes": ["posible_fallo_dhcp", "router_encendido"],
+      "consecuentes": ["diagnostico_dhcp"],
+      "prioridad": 8
+    },
+    {
+      "id": "R09",
+      "nombre": "Recomendar revisar DHCP",
+      "antecedentes": ["diagnostico_dhcp"],
+      "consecuentes": ["recomendar_verificar_dhcp"],
+      "prioridad": 6
+    },
+    {
+      "id": "R10",
+      "nombre": "Detectar conflicto de IP",
+      "antecedentes": ["ip_duplicada"],
+      "consecuentes": ["conflicto_ip"],
+      "prioridad": 9
+    },
+    {
+      "id": "R11",
+      "nombre": "Recomendar solucionar conflicto IP",
+      "antecedentes": ["conflicto_ip"],
+      "consecuentes": ["recomendar_cambiar_ip"],
+      "prioridad": 6
+    },
+    {
+      "id": "R12",
+      "nombre": "Detectar posible fallo DNS",
+      "antecedentes": ["ping_ip_funciona", "no_resuelve_dominio"],
+      "consecuentes": ["posible_fallo_dns"],
+      "prioridad": 10
+    },
+    {
+      "id": "R13",
+      "nombre": "Confirmar diagnostico DNS",
+      "antecedentes": ["posible_fallo_dns"],
+      "consecuentes": ["diagnostico_dns"],
+      "prioridad": 8
+    },
+    {
+      "id": "R14",
+      "nombre": "Recomendar revisar DNS",
+      "antecedentes": ["diagnostico_dns"],
+      "consecuentes": ["recomendar_verificar_dns"],
+      "prioridad": 6
+    },
+    {
+      "id": "R15",
+      "nombre": "Detectar fallo de puerta de enlace",
+      "antecedentes": ["sin_acceso_internet", "ping_gateway_falla"],
+      "consecuentes": ["fallo_gateway"],
+      "prioridad": 10
+    },
+    {
+      "id": "R16",
+      "nombre": "Recomendar revisar puerta de enlace",
+      "antecedentes": ["fallo_gateway"],
+      "consecuentes": ["recomendar_revisar_gateway"],
+      "prioridad": 6
+    },
+    {
+      "id": "R17",
+      "nombre": "Detectar saturacion de red",
+      "antecedentes": ["red_lenta", "muchos_dispositivos"],
+      "consecuentes": ["saturacion_red"],
+      "prioridad": 9
+    },
+    {
+      "id": "R18",
+      "nombre": "Recomendar reducir saturacion",
+      "antecedentes": ["saturacion_red"],
+      "consecuentes": ["recomendar_limitar_trafico"],
+      "prioridad": 6
+    }
+  ]
+}
