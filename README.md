@@ -52,7 +52,8 @@ Tambien permite cargar una base de conocimiento JSON externa.
 
 ## Integrantes
 
-- [Esteban Sanchez Buitrago (Toy solito >:)]
+- [Esteban Sanchez Buitrago]
+-[Maria Camila cortes]
 
 
 
